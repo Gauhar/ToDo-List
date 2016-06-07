@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="10174" systemVersion="15C50" minimumToolsVersion="Automatic">
+    <entity name="ToDoList" representedClassName="ToDoList" syncable="YES">
+        <attribute name="category" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="color" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="createdAt" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="updatedAt" optional="YES" attributeType="Date" syncable="YES"/>
+        <relationship name="items" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ToDoListItem" inverseName="list" inverseEntity="ToDoListItem" syncable="YES"/>
+    </entity>
+    <entity name="ToDoListItem" representedClassName="ToDoListItem" syncable="YES">
+        <attribute name="itemCreatedAt" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="itemDescription" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="itemTitle" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="itemUpdatedAt" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="status" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="list" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ToDoList" inverseName="items" inverseEntity="ToDoList" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="ToDoList" positionX="-63" positionY="-18" width="128" height="133"/>
+        <element name="ToDoListItem" positionX="99" positionY="171" width="128" height="135"/>
+    </elements>
+</model>
